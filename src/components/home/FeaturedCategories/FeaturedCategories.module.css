@@ -230,16 +230,26 @@
   .heading { align-items: flex-start; flex-direction: column; gap: 16px; margin-bottom: 24px; }
   .heading h2 { max-width: 330px; font-size: clamp(1.9rem, 8vw, 2.45rem); }
   .heading > a { padding: 10px 13px; font-size: 11px; }
-  .grid { grid-template-columns: 1fr; gap: 12px; }
-  .card:first-child { grid-column: auto; }
-  .card, .card:first-child { min-height: 235px; padding: 19px; border-radius: 19px; }
+  .grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 2px 2px 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #b79bc6 rgba(112, 64, 139, 0.1);
+  }
+  .grid::-webkit-scrollbar { height: 4px; }
+  .grid::-webkit-scrollbar-track { border-radius: 99px; background: rgba(112, 64, 139, 0.1); }
+  .grid::-webkit-scrollbar-thumb { border-radius: 99px; background: #b79bc6; }
+  .card, .card:first-child { flex: 0 0 min(78vw, 290px); min-height: 222px; padding: 18px; border-radius: 18px; scroll-snap-align: start; }
   .card::before { top: 20px; width: 160px; }
   .card::after { top: 42px; width: 122px; }
   .visual { top: 28px; right: 21px; width: 72px; height: 72px; border-radius: 22px; }
   .visual svg { width: 31px; height: 31px; }
-  .cardContent { max-width: 80%; padding-top: 30px; }
-  .card h3 { font-size: 25px; }
-  .card p { max-width: 245px; font-size: 11px; }
+  .cardContent { max-width: 84%; padding-top: 27px; }
+  .card h3 { font-size: 23px; }
+  .card p { max-width: 235px; font-size: 11px; }
   .cardBottom { margin-top: 13px; }
   .arrow { width: 32px; height: 32px; }
 }
